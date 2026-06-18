@@ -1,6 +1,6 @@
-<table>
-  <tr>
-    <td>
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:20px;">
+
+<div>
 
 # TagStripper
 
@@ -13,13 +13,13 @@ A lightweight, Python-based batch file renaming tool designed to clean filenames
 
 It works only on file and folder names — not file contents.
 
-  </td>
+</div>
 
-  <td width="180" align="right">
-    <img src="assets/app_icon.png" width="140">
-  </td>
-</tr>
-</table>
+<div>
+<img src="assets/app_icon.png" width="250">
+</div>
+
+</div>
 
 ## Features
 
