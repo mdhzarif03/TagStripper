@@ -1,7 +1,3 @@
-<table>
-  <tr>
-    <td>
-
 # TagStripper
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat-square)
@@ -12,14 +8,6 @@
 A lightweight, Python-based batch file renaming tool designed to clean filenames by removing common download tags, encoding strings, and formatting clutter.
 
 It works only on file and folder names — not file contents.
-
-  </td>
-
-  <td width="180" align="right" border="0">
-    <img src="assets/app_icon.png" width="140">
-  </td>
-</tr>
-</table>
 
 ## Features
 
