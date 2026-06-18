@@ -74,7 +74,6 @@ def process_directory(mode):
 
     messagebox.showinfo("TagStripper", f"Cleanup complete!\nSuccessfully processed {rename_count} items.")
 
-# --- Link Callback Functions ---
 def open_github(event):
     webbrowser.open_new("https://github.com/mdhzarif03")
 
@@ -84,13 +83,11 @@ def on_enter(event):
 def on_leave(event):
     github_link.config(fg="#555555", font=("Tahoma", 8))
 
-# --- GUI Setup (Windows XP Luna Theme Style) ---
 root = tk.Tk()
 root.title("TagStripper")  
 root.geometry("480x250")  
 root.resizable(False, False)
 
-# Windows XP Classic Colors
 XP_BG = "#ECE9D8"          
 XP_BLUE = "#004EAE"        
 XP_TEXT = "#000000"
@@ -98,25 +95,27 @@ XP_BTN_BG = "#F0F0EA"
 
 root.configure(bg=XP_BG)
 
-# Window Icon Loading Logic (Points to your custom app_icon.png)
+# Window Icon Loading & Auto-Scaling Logic for Banner
 try:
     icon_path = os.path.join("assets", "app_icon.png")
+    
     icon_img = tk.PhotoImage(file=icon_path)
     root.iconphoto(False, icon_img)
+    
+    banner_logo = icon_img.subsample(16, 16)
 except Exception as e:
     print(f"Note: Runtime window icon could not load. Using system fallback. Details: {e}")
 
-# Top Brand Banner
+# Top Brand Banner Frame
 header_frame = tk.Frame(root, bg=XP_BLUE, height=50)
 header_frame.pack(fill="x", side="top")
 header_frame.pack_propagate(False)
 
-# Balanced banner layout combining logo graphic and clean typography description
-if 'icon_img' in locals() or 'icon_img' in globals():
+if 'banner_logo' in locals() or 'banner_logo' in globals():
     header = tk.Label(
         header_frame, 
         text="  TagStripper Clean Utility", 
-        image=icon_img,
+        image=banner_logo,
         compound="left",
         font=("Tahoma", 11, "bold"), 
         fg="white", 
@@ -152,7 +151,7 @@ sub_header.pack(anchor="w")
 btn_frame = tk.Frame(root, bg=XP_BG)
 btn_frame.pack(expand=True, pady=(0, 20))
 
-# Windows XP Button Styling
+# Button Styling
 btn_options = {
     "font": ("Tahoma", 9),
     "bg": XP_BTN_BG,
