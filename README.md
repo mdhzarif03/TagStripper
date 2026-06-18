@@ -1,4 +1,4 @@
-# 📁 TagStripper v1.0
+# 📁 TagStripper
 
 A lightweight, zero-dependency batch file utility built to instantly clean metadata tags, download traces, and media encoder string clutter from folders and file names.
 
