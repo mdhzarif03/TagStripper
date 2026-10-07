@@ -1,41 +1,54 @@
 # TagStripper
 
-![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat-square)
-![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Stable-green?style=flat-square)
-![Type](https://img.shields.io/badge/Utility-File%20Renamer-orange?style=flat-square)
+A lightweight Python-based utility for cleaning and normalizing file and folder names.
 
-A lightweight, Python-based batch file renaming tool designed to clean filenames by removing common download tags, encoding strings, and formatting clutter.
+[![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat-square)](https://www.python.org/)
+[![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey?style=flat-square)](https://www.microsoft.com/en-us/windows)
 
-It works only on file and folder names — not file contents.
+## Overview
+
+TagStripper is a desktop utility for cleaning filenames by removing common download tags, encoding strings, formatting clutter, and unwanted separators.
+
+It works with file and folder names only and does not modify file contents.
 
 ## Features
 
-- **Safe Cleanup Mode**  
-  Replaces `_` and `-` with spaces while preserving original text.
+- Safe cleanup mode for replacing common filename separators
+- Smart cleanup mode for removing tags, brackets, duplicate words, and web clutter
+- File extension preservation
+- Filename collision handling
+- Support for renaming files and top-level folders
 
-- **Smart Cleanup Mode**  
-  Removes common media release tags, bracketed text (`[...]`, `(...)`), duplicate words, and web clutter strings.
+## Demo
 
-- **Basic Data Safety**  
-  Preserves file extensions and prevents empty filenames.
+Not applicable. TagStripper is distributed as a Windows desktop application.
 
-- **Collision Handling**  
-  Adds `_New` suffix when a filename conflict is detected.
+## Tech Stack
 
-- **Folder Support**  
-  Can rename files and top-level folders in a selected directory.
+- Python
+- Tkinter
+- PyInstaller
 
----
+## Getting Started
 
-## How to Use
-1. Navigate to the **Releases** panel on the right sidebar of this page.
-2. Download the standalone production asset: TagStripper_Setup.exe.
-3. Launch the wizard setup installer. Upon completion, the operational documentation guide will automatically deploy inside your desktop browser workspace.
+Download the latest `TagStripper_Setup.exe` from the [Releases](https://github.com/mdhzarif03/TagStripper/releases) section.
 
----
+Run the installer and launch TagStripper.
 
-## Behavior Summary
+Select the directory you want to process, choose a cleanup mode, and execute the operation.
+
+No additional dependencies are required when using the packaged application.
+
+## Project Structure
+
+```bash
+TagStripper/
+├── assets/
+├── main.py
+├── README.md
+├── LICENSE
+└── .gitignore
+```
 
 <img src="assets\software_interface.png">
 
@@ -43,30 +56,21 @@ It works only on file and folder names — not file contents.
 |------|------------|
 | Safe Cleanup | Only replaces separators (`_`, `-`) |
 | Smart Cleanup | Removes tags, brackets, and clutter strings |
-
----
-
-## Tech Stack
-
-- **Language:** Python
-- **GUI:** Tkinter (Windows-style interface)
-- **Packaging:** PyInstaller
-
----
-
-## Output Example
-
+ 
+Output Examples
 | Input | Output (Smart Mode) |
 |------|---------------------|
 | Movie_1080p_Bluray.mkv | Movie.mkv |
 | funny-cat-hd.gif | funny cat.gif |
 | Wallpaper_[site].png | Wallpaper.png |
 
----
+Notes
+- Only the selected directory level is processed.
+- Subdirectories are not scanned recursively.
+- There is no preview before renaming.
+- There is no undo feature.
+- File contents are never modified.
 
-## Notes
-
-- No recursive folder scanning (only selected directory level)
-- No preview before renaming
-- No undo feature
-- File contents are never modified
+**Status:** Released as version 1.0.0.
+**Author:** Muhammad Hasan Zarif
+**GitHub:** @mdhzarif03
